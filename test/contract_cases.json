@@ -1,0 +1,85 @@
+{
+  "$comment": "Sunucu ile istemcinin ortak doğrulama vakaları. Sunucu testleri de bu dosyayı okuyabilir (ccs_server TODO §6). null = reddedilir. istanbulDay: an (ISO) → kasa günü (İstanbul takvim günü, YYYY-MM-DD).",
+  "phone": [
+    ["05321110031", "+905321110031"],
+    ["+90 532 111 00 31", "+905321110031"],
+    ["905321110031", "+905321110031"],
+    ["00905321110031", "+905321110031"],
+    ["5321110031", "+905321110031"],
+    ["(0532) 111-00-31", "+905321110031"],
+    ["02161234567", null],
+    ["0532111003", null],
+    ["", null],
+    ["0532abc0031", null]
+  ],
+  "personName": [
+    ["Ayşe Yılmaz", "Ayşe Yılmaz"],
+    ["  Ayşe   Yılmaz  ", "Ayşe Yılmaz"],
+    ["O'Neil", "O'Neil"],
+    ["Ali-Veli K.", "Ali-Veli K."],
+    ["1Ali", null],
+    ["-Ali", null],
+    ["Ali2", null],
+    ["", null]
+  ],
+  "reference": [
+    ["hk1001", "HK1001"],
+    ["HK-1001", "HK-1001"],
+    ["fi1", "FI1"],
+    ["A", null],
+    ["-AB", null],
+    ["HKİ1", null],
+    ["ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456", null]
+  ],
+  "amount": [
+    ["1.250,50", 1250.5],
+    ["1250,5", 1250.5],
+    ["1.250", 1250],
+    ["1,25", 1.25],
+    ["₺ 900", 900],
+    ["1.000.000", 1000000],
+    ["0", 0],
+    ["", "empty"],
+    ["1.25", null],
+    ["1250.5", null],
+    ["12.50,5", null],
+    ["1.000.001", null],
+    ["-5", null],
+    ["1,255", null],
+    ["abc", null]
+  ],
+  "iban": [
+    ["TR33 0006 1005 1978 6457 8413 26", "TR33 0006 1005 1978 6457 8413 26"],
+    ["tr330006100519786457841326", "TR33 0006 1005 1978 6457 8413 26"],
+    ["TR340006100519786457841326", null],
+    ["TR33000610051978645784132", null],
+    ["DE89370400440532013000", null]
+  ],
+  "password": [
+    ["abcdefg1", true],
+    ["kısa1", false],
+    ["abcdefgh", false],
+    ["12345678", false],
+    ["05321110031", false]
+  ],
+  "googleUrl": [
+    ["https://g.page/r/abc/review", true],
+    ["https://www.google.com/maps/place/x", true],
+    ["https://maps.app.goo.gl/abc", true],
+    ["https://search.google.com.tr/local/writereview?placeid=x", true],
+    ["http://g.page/r/abc", false],
+    ["https://example.com", false],
+    ["https://user:pass@google.com", false]
+  ],
+  "istanbulDay": [
+    ["2026-10-31T20:59:59.999Z", "2026-10-31"],
+    ["2026-10-31T21:00:00.000Z", "2026-11-01"],
+    ["2026-10-31T21:30:00.000Z", "2026-11-01"],
+    ["2026-11-01T20:59:59.999Z", "2026-11-01"],
+    ["2026-12-31T20:59:59.999Z", "2026-12-31"],
+    ["2026-12-31T21:00:00.000Z", "2027-01-01"],
+    ["2028-02-28T21:00:00.000Z", "2028-02-29"],
+    ["2026-03-28T22:00:00.000Z", "2026-03-29"],
+    ["2026-10-24T23:30:00.000Z", "2026-10-25"]
+  ]
+}
